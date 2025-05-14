@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 180px;
+  background-color: #e0e0e0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: inset -1px 0 0 #ccc;
+}
+
+.sidebar button {
+  background-color: #d9d9d9;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #c0c0c0;
+}
+
+.sidebar button.activo {
+  background-color: #4caf50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Formulario */
+.formulario {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
+
+.formulario input,
+.formulario select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 140px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.formulario button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #45a049;
+}
+
+/* Totales */
+h2 {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+h2:nth-of-type(3) {
+  margin-bottom: 20px;
+}
+
+h2[style] {
+  font-size: 1.4rem;
+}
+
+/* Gráfica */
+.grafico,
+canvas {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Header contenido */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #e0f2f1;
+}
+
+/* Botón modo oscuro */
+.theme-toggle {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: white;
+  color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: #e0f2f1;
+}
+
+/* 🌙 MODO OSCURO */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .header {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1e1e1e;
+  box-shadow: inset -1px 0 0 #333;
+}
+
+body.dark-mode .sidebar button {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+body.dark-mode .sidebar button:hover {
+  background-color: #555;
+}
+
+body.dark-mode .sidebar button.activo {
+  background-color: #81c784;
+  color: black;
+}
+
+body.dark-mode .main-content {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .formulario input,
+body.dark-mode .formulario select {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .formulario button {
+  background-color: #81c784;
+  color: #000;
+}
+
+body.dark-mode .formulario button:hover {
+  background-color: #66bb6a;
+}
+
